@@ -1,0 +1,149 @@
+[colors]
+bground = ${xrdb:bground}
+bground-alt = ${xrdb:bground-alt}
+bground-alt1 = ${xrdb:bground-alt1}
+fground = ${xrdb:fground}
+fground-alt = ${xrdb:fground-alt}
+
+red = ${xrdb:red}
+green = ${xrdb:green}
+blue = ${xrdb:blue}
+yellow = ${xrdb:yellow}
+
+[bar/main]
+fixed-center = true
+width = 100%
+height = 28
+background = ${colors.bground}
+foreground = ${colors.fground}
+line-size = 3
+line-color = ${colors.bground}
+padding-right = 1
+module-margin = 1
+
+font-0 = mononoki:pixelsize=12;3
+font-1 = Symbols Nerd Font:pixelSize=13;3
+
+modules-left = bspwm xwindow
+modules-right = xbacklight pulseaudio battery date
+
+cursor-click = default
+cursor-scroll = default
+
+[module/bspwm]
+type = internal/bspwm
+format = <label-state> <label-mode>
+format-overline = ${colors.bground}
+format-underline = ${colors.bground}
+
+label-focused = %index%
+label-focused-foreground = ${colors.fground}
+label-focused-background = ${colors.bground-alt1}
+label-focused-padding = 1
+
+label-occupied = %index%
+label-occupied-foreground = ${colors.fground-alt}
+label-occupied-background = ${colors.bground-alt}
+label-occupied-padding = 1
+
+label-urgent = %index%!
+label-urgent-foreground = ${colors.fground-alt}
+label-urgent-background = ${colors.bground-alt}
+label-urgent-padding = 1
+
+label-empty = _
+label-empty-foreground = ${colors.fground-alt}
+label-empty-background = ${colors.bground-alt}
+label-empty-padding = 1
+
+[module/xwindow]
+type = internal/xwindow
+format = <label>
+format-overline = ${colors.bground}
+format-underline = ${colors.bground}
+format-background = ${colors.bground-alt}
+format-padding = 1
+label = %title:0:85:...%
+
+[module/xbacklight]
+type = internal/xbacklight
+format = <ramp><label>
+format-overline = ${colors.bground}
+format-underline = ${colors.bground}
+label = %percentage%%
+label-padding = 1
+label-background = ${colors.bground-alt}
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-padding = 1
+ramp-background = ${colors.yellow}
+
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = <ramp-volume> <label-volume>
+format-volume-overline = ${colors.bground}
+format-volume-underline = ${colors.bground}
+format-volume-background = ${colors.bground-alt}
+format-volume-padding = 1
+ramp-volume-0 = 奔
+ramp-volume-1 = 墳
+ramp-volume-2 = 
+
+format-muted =  <label-muted>
+format-muted-overline = ${colors.bground}
+format-muted-underline = ${colors.bground}
+format-muted-background = ${colors.bground-alt}
+format-muted-padding = 1
+label-muted = muted
+
+click-right = killall pavucontrol || pavucontrol
+
+[module/battery]
+type = internal/battery
+full-at = 99
+battery = BAT0
+adapter = AC
+
+format-charging =  <label-charging>
+format-charging-overline = ${colors.bground}
+format-charging-underline = ${colors.bground}
+format-charging-background = ${colors.bground-alt}
+format-charging-padding = 1
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-overline = ${colors.bground}
+format-discharging-underline = ${colors.bground}
+format-discharging-background = ${colors.bground-alt}
+format-discharging-padding = 1
+label-discharging = %percentage%%
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
+
+format-full =  <label-full>
+format-full-overline = ${colors.bground}
+format-full-underline = ${colors.bground}
+format-full-background = ${colors.bground-alt}
+format-full-padding = 1
+label-full = 100%
+
+[module/date]
+type = internal/date
+format =  <date>
+format-overline = ${colors.bground}
+format-underline = ${colors.bground}
+format-background = ${colors.bground-alt}
+format-padding = 1
+date = %I:%M %p | %a, %d %b
+
+[settings]
+; vim: ft=dosini
