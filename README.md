@@ -10,3 +10,7 @@ All my configuration files - the so called "dotfiles" - needed to replicate my L
 - Alacritty (Terminal Emulator)
 - Neovim (Text Editor)
 - Picom (Compositor)
+
+## TODO
+- [x] Make a TODO section in the README.
+- [ ] Populate it with some real content.
