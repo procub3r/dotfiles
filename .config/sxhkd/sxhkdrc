@@ -2,6 +2,16 @@
 # wm independent hotkeys
 #
 
+# Volume:
+XF86AudioRaiseVolume
+    pactl set-sink-volume @DEFAULT_SINK@ +1000
+XF86AudioLowerVolume
+    pactl set-sink-volume @DEFAULT_SINK@ -1000
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+shift + XF86AudioMute
+    pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
 # Program launcher
 super + r
 	rofi -show drun
@@ -20,7 +30,7 @@ super + shift + Return
 
 # File manager:
 super + F1
-    rofi -show file-browser
+    pcmanfm
 
 # Colour picker:
 super + F2
