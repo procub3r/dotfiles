@@ -5,7 +5,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'sainnhe/sonokai'
 Plug 'itchyny/lightline.vim'
-"Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 " My colours:
@@ -26,7 +25,6 @@ set title
 set cursorline
 set relativenumber
 set clipboard+=unnamedplus
-set colorcolumn=79
 
 " Tab settings:
 set tabstop=4
@@ -47,5 +45,6 @@ map <C-l> <C-w>l
 " Helpful keybindings:
 xnoremap K :move '<-2<CR>gv-gv
 xnoremap J :move '>+1<CR>gv-gv
-nnoremap \\ :noh<return>
-nnoremap ;; :set invrelativenumber<return>
+nnoremap <silent> \\ :noh<return>
+nnoremap <silent> ;; :set invrelativenumber<return>
+nnoremap <silent> '' :execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")<CR>
