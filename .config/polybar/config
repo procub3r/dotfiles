@@ -25,7 +25,10 @@ font-1 = Symbols Nerd Font:pixelSize=13;3
 font-2 = mononoki:pixelsize=13;4
 
 modules-left = launcher bspwm xwindow
-modules-right = xbacklight pulseaudio battery date widgets
+modules-right = pulseaudio date widgets
+
+scroll-up = bspc desktop -f prev.local
+scroll-down = bspc desktop -f next.local
 
 cursor-click = default
 cursor-scroll = default

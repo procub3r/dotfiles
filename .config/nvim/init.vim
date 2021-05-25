@@ -25,6 +25,8 @@ set mouse=a
 set title
 set cursorline
 set relativenumber
+set clipboard+=unnamedplus
+set colorcolumn=79
 
 " Tab settings:
 set tabstop=4
