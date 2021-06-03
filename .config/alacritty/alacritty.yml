@@ -20,30 +20,30 @@ font:
 
 colors:
     primary:
-        background: "0x2B313D"
-        foreground: "0xe1e3e4"
+        background: "#2A2F38"
+        foreground: "#e1e3e4"
 
     normal:
-        black: "0x29292a"
-        red: "0xff6578"
-        green: "0x9dd274"
-        yellow: "0xeacb64"
-        blue: "0x72cce8"
-        magenta: "0xba9cf3"
-        cyan: "0x83ddf9"
-        white: "0xe1e3e4"
+        black: "#181a1c"
+        red: "#ff6578"
+        green: "#9dd274"
+        yellow: "#eacb64"
+        blue: "#72cce8"
+        magenta: "#ba9cf3"
+        cyan: "#83ddf9"
+        white: "#e1e3e4"
 
     bright:
-        black: "0x292b2d"
-        red: "0xff6578"
-        green: "0x9dd274"
-        yellow: "0xeacb64"
-        blue: "0x72cce8"
-        magenta: "0xba9cf3"
-        cyan: "0x83ddf9"
-        white: "0xe1e3e4"
+        black: "#181a1c"
+        red: "#ff6578"
+        green: "#9dd274"
+        yellow: "#eacb64"
+        blue: "#72cce8"
+        magenta: "#ba9cf3"
+        cyan: "#83ddf9"
+        white: "#e1e3e4"
 
-# background_opacity: 0.95
+# background_opacity: 0.94
 
 key_bindings:
    - { key: Return, mods: Control|Shift, action: SpawnNewInstance }
