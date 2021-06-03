@@ -148,7 +148,7 @@ format-full-underline = ${colors.bground}
 [module/date]
 type = internal/date
 ; format =  <date>
-format = %{B#9DD274}  %{B-}%{B#C5C8C6} <date> %{B-}
+format = %{B#9DD274}  %{B-}%{B#E1E3E4} <date> %{B-}
 format-overline = ${colors.bground}
 format-underline = ${colors.bground}
 date = %I:%M %p | %a, %d %b
