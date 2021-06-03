@@ -1,6 +1,6 @@
 *.bground: #21252A
-*.bground-alt: #C5C8C6
-*.bground-alt1: #A3A6A4
+*.bground-alt: #e1e3e4
+*.bground-alt1: #bfc1c2
 *.fground: #111214
 *.fground-alt: #C5C8C6
 *.red: #FF6578
