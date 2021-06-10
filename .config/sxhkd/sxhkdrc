@@ -12,7 +12,11 @@ XF86AudioMute
 shift + XF86AudioMute
     pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-# Program launcher
+# Perform OCR on image in clipboard:
+super + shift + o
+    clipboard_ocr.sh
+
+# Program launcher:
 super + r
 	rofi -show drun
 
@@ -20,7 +24,7 @@ super + r
 super + shift + s
     flameshot gui
 
-# Terminal emulator
+# Terminal emulator:
 super + Return
 	alacritty
 
@@ -139,13 +143,9 @@ alt + shift + space
 # move/resize
 #
 
-# expand a window by moving one of its side outward
-super + alt + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
-
-# contract a window by moving one of its side inward
-super + ctrl + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+# resize a floating windows by moving it's bottom right corner
+super + shift + {Left,Down,Up,Right}
+	bspc node -z {right -20 0,bottom 0 20,bottom 0 -20,right 20 0}
 
 # move a floating window
 super + {Left,Down,Up,Right}
