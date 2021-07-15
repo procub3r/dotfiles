@@ -20,7 +20,7 @@ font:
 
 colors:
     primary:
-        background: "#2A2F38"
+        background: "#2a2f38"
         foreground: "#e1e3e4"
 
     normal:
@@ -43,8 +43,8 @@ colors:
         cyan: "#83ddf9"
         white: "#e1e3e4"
 
-# background_opacity: 0.94
+          # background_opacity: 0.85
 
 key_bindings:
-   - { key: Return, mods: Control|Shift, action: SpawnNewInstance }
+    - { key: Return, mods: Control|Shift, action: SpawnNewInstance }
 

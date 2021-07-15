@@ -1,4 +1,5 @@
-*.bground: #21252A
+!*.bground: #21252a
+*.bground: #2a2f38
 *.bground-alt: #e1e3e4
 *.bground-alt1: #bfc1c2
 *.fground: #111214

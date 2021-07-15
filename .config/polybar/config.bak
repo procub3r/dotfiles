@@ -18,30 +18,17 @@ background = ${colors.bground}
 foreground = ${colors.fground}
 line-size = 3
 line-color = ${colors.bground}
-module-margin-right = 1
+padding-right = 1
+module-margin = 1
 
 font-0 = mononoki:pixelsize=12;3
 font-1 = Symbols Nerd Font:pixelSize=13;3
-font-2 = mononoki:pixelsize=13;4
 
-modules-left = launcher bspwm xwindow
-modules-right = pulseaudio date widgets
-
-# click-middle = bspc node -c
-scroll-up = bspc desktop -f prev.local
-scroll-down = bspc desktop -f next.local
+modules-left = bspwm xwindow
+modules-right = xbacklight pulseaudio battery date
 
 cursor-click = default
 cursor-scroll = default
-wm-restack = bspwm
-
-[module/launcher]
-type = custom/text
-content = 
-; content = 
-content-background = ${colors.red}
-content-padding = 1
-click-left = rofi -show drun
 
 [module/bspwm]
 type = internal/bspwm
@@ -50,31 +37,33 @@ format-overline = ${colors.bground}
 format-underline = ${colors.bground}
 
 label-focused = %index%
-label-focused-font = 3
 label-focused-foreground = ${colors.fground}
 label-focused-background = ${colors.bground-alt1}
 label-focused-padding = 1
 
 label-occupied = %index%
-label-occupied-foreground = ${colors.fground}
+label-occupied-foreground = ${colors.fground-alt}
 label-occupied-background = ${colors.bground-alt}
 label-occupied-padding = 1
 
 label-urgent = %index%!
-label-urgent-foreground = ${colors.fground}
+label-urgent-foreground = ${colors.fground-alt}
 label-urgent-background = ${colors.bground-alt}
 label-urgent-padding = 1
 
 label-empty = _
-label-empty-foreground = ${colors.fground}
+label-empty-foreground = ${colors.fground-alt}
 label-empty-background = ${colors.bground-alt}
 label-empty-padding = 1
 
 [module/xwindow]
 type = internal/xwindow
 format = <label>
-format-foreground = ${colors.bground-alt}
-label = " ﬌ %title:0:75:...%"
+format-overline = ${colors.bground}
+format-underline = ${colors.bground}
+format-background = ${colors.bground-alt}
+format-padding = 1
+label = %title:0:85:...%
 
 [module/xbacklight]
 type = internal/xbacklight
@@ -82,39 +71,31 @@ format = <ramp><label>
 format-overline = ${colors.bground}
 format-underline = ${colors.bground}
 label = %percentage%%
-label-background = ${colors.bground-alt}
 label-padding = 1
+label-background = ${colors.bground-alt}
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
 ramp-padding = 1
 ramp-background = ${colors.yellow}
 
-[module/iisc]
-type = custom/text
-content = Project: IISc
-content-padding = 1
-content-foreground = ${colors.bground-alt}
-
 [module/pulseaudio]
 type = internal/pulseaudio
-use-ui-max = false
-format-volume = <ramp-volume><label-volume>
+format-volume = <ramp-volume> <label-volume>
 format-volume-overline = ${colors.bground}
 format-volume-underline = ${colors.bground}
-label-volume-padding = 1
-label-volume-background = ${colors.bground-alt}
+format-volume-background = ${colors.bground-alt}
+format-volume-padding = 1
 ramp-volume-0 = 奔
 ramp-volume-1 = 墳
 ramp-volume-2 = 
-ramp-volume-background = ${colors.red}
-ramp-volume-padding = 1
 
-format-muted = <label-muted>
+format-muted =  <label-muted>
 format-muted-overline = ${colors.bground}
 format-muted-underline = ${colors.bground}
-label-muted = %{B#FF6578}  %{B-}%{B#C5C8C6} muted %{B-}
-label-muted-background = ${colors.bground-alt}
+format-muted-background = ${colors.bground-alt}
+format-muted-padding = 1
+label-muted = muted
 
 click-right = killall pavucontrol || pavucontrol
 
@@ -124,16 +105,18 @@ full-at = 99
 battery = BAT0
 adapter = AC
 
-format-charging = %{B#64B0C8}  %{B-}%{B#C5C8C6} <label-charging> %{B-}
+format-charging =  <label-charging>
 format-charging-overline = ${colors.bground}
 format-charging-underline = ${colors.bground}
+format-charging-background = ${colors.bground-alt}
+format-charging-padding = 1
 
-format-discharging = <ramp-capacity><label-discharging>
+format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-overline = ${colors.bground}
 format-discharging-underline = ${colors.bground}
+format-discharging-background = ${colors.bground-alt}
+format-discharging-padding = 1
 label-discharging = %percentage%%
-label-discharging-background = ${colors.bground-alt}
-label-discharging-padding = 1
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -145,27 +128,22 @@ ramp-capacity-6 = 
 ramp-capacity-7 = 
 ramp-capacity-8 = 
 ramp-capacity-9 = 
-ramp-capacity-background = ${colors.blue}
-ramp-capacity-padding = 1
 
-format-full = %{B#64B0C8}  %{B-}%{B#C5C8C6} 100% %{B-}
+format-full =  <label-full>
 format-full-overline = ${colors.bground}
 format-full-underline = ${colors.bground}
+format-full-background = ${colors.bground-alt}
+format-full-padding = 1
+label-full = 100%
 
 [module/date]
 type = internal/date
-; format =  <date>
-format = %{B#9DD274}  %{B-}%{B#E1E3E4} <date> %{B-}
+format =  <date>
 format-overline = ${colors.bground}
 format-underline = ${colors.bground}
-; date = %I:%M %p | %a, %d %b
-date = %R | %a, %d %b
-
-[module/widgets]
-type = custom/text
-content = ﰪ
-content-background = ${colors.blue}
-content-padding = 1
+format-background = ${colors.bground-alt}
+format-padding = 1
+date = %I:%M %p | %a, %d %b
 
 [settings]
 ; vim: ft=dosini

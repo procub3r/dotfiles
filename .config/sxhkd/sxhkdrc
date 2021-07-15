@@ -12,6 +12,10 @@ XF86AudioMute
 shift + XF86AudioMute
     pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
+# Launch discord in browser:
+super + shift + d
+    xdg-open https://discord.com/channels/@me
+
 # Perform OCR on image in clipboard:
 super + shift + o
     clipboard_ocr.sh
@@ -30,7 +34,7 @@ super + Return
 
 # Web Browser:
 super + shift + Return
-    firefox
+    brave
 
 # File manager:
 super + F1
