@@ -1,0 +1,39 @@
+[global]
+    width = 250
+    origin = top-right
+    offset = 15x43
+    progress_bar = false
+    indicate_hidden = true
+    transparency = 10  #
+    separator_height = 2
+    frame_width = 2
+    frame_color = "#c1c3c4"
+    font = mononoki 10
+    line_height = 2
+    format = "<b>%s</b>\n<i>%b</i>"
+    max_icon_size = 32
+    text_icon_padding = 10
+    icon_path = /usr/share/icons/Arc/status/32:/usr/share/icons/Arc/devices/32
+
+[urgency_low]
+    timeout = 2
+    background = "#2a2f38"
+    foreground = "#e1e3e4"
+
+[urgency_normal]
+    timeout = 5
+    background = "#2a2f38"
+    foreground = "#e1e3e4"
+
+[urgency_critical]
+    timeout = 0
+    background = "#2a2f38"
+    foreground = "#e1e3e4"
+
+[shortcuts]
+    close = "ctrl+space"
+    close_all = ctrl+shift+space
+    history = ctrl+grave
+    context = ctrl+shift+period
+
+# vim: ft=cfg

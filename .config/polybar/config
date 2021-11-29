@@ -1,0 +1,175 @@
+[settings]
+; vim: ft=dosini
+
+[colors]
+transparent = #00000000
+dark = #2a2f38
+light = #e1e3e4
+grey = #b1b3b4
+red = #ff6578
+green = #9dd274
+blue = #72cce8
+yellow = #eacb64
+
+[bar/main]
+width = 100%
+height = 26px
+
+line-size = 3
+background = ${colors.dark}
+foreground = ${colors.dark}
+
+font-0 = mononoki:pixelsize=12;3
+font-1 = Symbols Nerd Font:pixelsize=12;3
+
+modules-left = launch bspwm title
+modules-right = wifi backlight pulseaudio battery date wm
+module-margin-left = 1
+
+scroll-up = bspc desktop -f prev.local
+scroll-down = bspc desktop -f next.local
+
+cursor-click = default
+cursor-scroll = default
+wm-restack = bspwm
+
+[module/launch]
+type = custom/text
+content = 
+content-padding = 1
+content-foreground = ${colors.dark}
+content-background = ${colors.red}
+click-left = rofi -show drun
+
+[module/bspwm]
+type = internal/bspwm
+format = <label-state>
+format-overline = ${colors.dark}
+format-underline = ${colors.dark}
+
+label-focused = %index%
+label-focused-font = 3
+label-focused-foreground = ${colors.dark}
+label-focused-background = ${colors.grey}
+label-focused-padding = 1
+
+label-occupied = %index%
+label-occupied-foreground = ${colors.dark}
+label-occupied-background = ${colors.light}
+label-occupied-padding = 1
+
+label-urgent = %index%!
+label-urgent-foreground = ${colors.dark}
+label-urgent-background = ${colors.light}
+label-urgent-padding = 1
+
+label-empty = _
+label-empty-foreground = ${colors.dark}
+label-empty-background = ${colors.light}
+label-empty-padding = 1
+
+[module/title]
+type = internal/xwindow
+format = <label>
+format-foreground = ${colors.light}
+label = " ﬌ %title:0:75:...%"
+
+[module/wifi]
+type = internal/network
+interface = wlan0
+interval = 5.0
+
+format-connected = 直
+format-connected-foreground = ${colors.light}
+
+format-disconnected = 睊
+format-disconnected-foreground = ${colors.red}
+
+[module/backlight]
+type = internal/xbacklight
+format = <ramp><label>
+format-overline = ${colors.dark}
+format-underline = ${colors.dark}
+label = %percentage%%
+label-background = ${colors.light}
+label-padding = 1
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-padding = 1
+ramp-background = ${colors.yellow}
+
+[module/pulseaudio]
+type = internal/pulseaudio
+use-ui-max = false
+format-volume = <ramp-volume><label-volume>
+format-volume-overline = ${colors.dark}
+format-volume-underline = ${colors.dark}
+label-volume-padding = 1
+label-volume-background = ${colors.light}
+ramp-volume-0 = 奔
+ramp-volume-1 = 墳
+ramp-volume-2 = 
+ramp-volume-background = ${colors.red}
+ramp-volume-padding = 1
+
+format-muted = <label-muted>
+format-muted-overline = ${colors.dark}
+format-muted-underline = ${colors.dark}
+label-muted = %{B#FF6578}  %{B-}%{B#C5C8C6} muted %{B-}
+label-muted-background = ${colors.light}
+
+click-right = pkill pavucontrol || pavucontrol
+
+[module/battery]
+type = internal/battery
+full-at = 98
+battery = BAT0
+adapter = AC
+
+format-charging = %{B#64B0C8}  %{B-}%{B#E1E3E4} <label-charging> %{B-}
+format-charging-overline = ${colors.dark}
+format-charging-underline = ${colors.dark}
+
+format-discharging = <ramp-capacity><label-discharging>
+format-discharging-overline = ${colors.dark}
+format-discharging-underline = ${colors.dark}
+label-discharging = %percentage%%
+label-discharging-background = ${colors.light}
+label-discharging-padding = 1
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
+ramp-capacity-background = ${colors.blue}
+ramp-capacity-padding = 1
+
+format-full = %{B#64B0C8}  %{B-}%{B#E1E3E4} 100% %{B-}
+format-full-overline = ${colors.dark}
+format-full-underline = ${colors.dark}
+
+[module/date]
+type = internal/date
+format = %{B#9dd274}  %{B-}%{B#e1e3e4} <date> %{B-}
+format-overline = ${colors.dark}
+format-underline = ${colors.dark}
+date = %R | %a, %d %b
+
+[module/wm]
+type = custom/text
+content = 
+content-padding = 1
+content-background = ${colors.blue}
+content-foreground = ${colors.dark}
+
+click-right = bspc desktop -l next
+click-middle = bspc node -c
+scroll-up = bspc node -f prev.local.!hidden.window
+scroll-down = bspc node -f next.local.!hidden.window
