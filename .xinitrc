@@ -1,5 +1,5 @@
 dunst &
-lxsession &
+lxsession --noautostart &
 flameshot &
 xsettingsd &
 xsetroot -cursor_name left_ptr
