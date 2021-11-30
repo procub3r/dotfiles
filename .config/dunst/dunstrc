@@ -8,7 +8,7 @@
     separator_height = 2
     frame_width = 2
     frame_color = "#c5c8c6"
-    font = mononoki 10
+    font = "SF Mono" 10
     line_height = 2
     format = "<b>%s</b>\n<i>%b</i>"
     max_icon_size = 32
