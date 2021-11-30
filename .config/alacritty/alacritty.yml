@@ -18,28 +18,55 @@ font:
     style: BoldItalic
   size: 12
 
+# sonokai atlantis
+#colors:
+#  primary:
+#    background: '#2a2f38'
+#    foreground: '#e1e3e4'
+#
+#  normal:
+#    black: '#181a1c'
+#    red: '#ff6578'
+#    green: '#9dd274'
+#    yellow: '#eacb64'
+#    blue: '#72cce8'
+#    magenta: '#ba9cf3'
+#    cyan: '#4dd0e1'
+#    white: '#e1e3e4'
+#
+#  bright:
+#    black: '#828a9a'
+#    red: '#ff6578'
+#    green: '#9dd274'
+#    yellow: '#eacb64'
+#    blue: '#72cce8'
+#    magenta: '#ba9cf3'
+#    cyan: '#4dd0e1'
+#    white: '#e1e3e4'
+
+# sonokai andromeda
 colors:
   primary:
-    background: '#2a2f38'
+    background: '#2b2d3a'
     foreground: '#e1e3e4'
 
   normal:
     black: '#181a1c'
-    red: '#ff6578'
-    green: '#9dd274'
-    yellow: '#eacb64'
-    blue: '#72cce8'
-    magenta: '#ba9cf3'
+    red: '#fb617e'
+    green: '#9ed06c'
+    yellow: '#edc763'
+    blue: '#6dcae8'
+    magenta: '#bb97ee'
     cyan: '#4dd0e1'
     white: '#e1e3e4'
 
   bright:
-    black: '#828a9a'
-    red: '#ff6578'
-    green: '#9dd274'
-    yellow: '#eacb64'
-    blue: '#72cce8'
-    magenta: '#ba9cf3'
+    black: '#7e8294'
+    red: '#fb617e'
+    green: '#9ed06c'
+    yellow: '#edc763'
+    blue: '#6dcae8'
+    magenta: '#bb97ee'
     cyan: '#4dd0e1'
     white: '#e1e3e4'
 

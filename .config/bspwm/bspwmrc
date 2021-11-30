@@ -13,8 +13,10 @@ bspc monitor -d 1 2 3 4 5
 
 bspc config border_width 2
 bspc config normal_border_color '#21252a'
-bspc config focused_border_color '#c1c3c4'
-bspc config window_gap 5
+bspc config focused_border_color '#c5c8c6'
+bspc config window_gap 0
+bspc config single_monocle true
+bspc config borderless_monocle true
 bspc config split_ratio 0.5
 bspc config honor_size_hints true
 

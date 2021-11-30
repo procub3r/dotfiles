@@ -7,7 +7,7 @@
     transparency = 10  #
     separator_height = 2
     frame_width = 2
-    frame_color = "#c1c3c4"
+    frame_color = "#c5c8c6"
     font = mononoki 10
     line_height = 2
     format = "<b>%s</b>\n<i>%b</i>"
@@ -17,17 +17,17 @@
 
 [urgency_low]
     timeout = 2
-    background = "#2a2f38"
+    background = "#2b2d3a"
     foreground = "#e1e3e4"
 
 [urgency_normal]
     timeout = 5
-    background = "#2a2f38"
+    background = "#2b2d3a"
     foreground = "#e1e3e4"
 
 [urgency_critical]
     timeout = 0
-    background = "#2a2f38"
+    background = "#2b2d3a"
     foreground = "#e1e3e4"
 
 [shortcuts]

@@ -18,7 +18,7 @@ cmd 'set termguicolors'
 
 g.sonokai_better_performance = 1
 g.sonokai_transparent_background = 1
-g.sonokai_style = 'atlantis'
+g.sonokai_style = 'andromeda'
 cmd 'colorscheme sonokai'
 
 -- vim options --

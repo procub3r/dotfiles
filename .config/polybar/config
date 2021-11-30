@@ -3,17 +3,17 @@
 
 [colors]
 transparent = #00000000
-dark = #2a2f38
-light = #e1e3e4
-grey = #b1b3b4
+dark = #2b2d3a
+light = #c5c8c6
+grey = #a5a8a6
 red = #ff6578
 green = #9dd274
-blue = #72cce8
+blue = #64b0c8
 yellow = #eacb64
 
 [bar/main]
 width = 100%
-height = 26px
+height = 28px
 
 line-size = 3
 background = ${colors.dark}
@@ -157,7 +157,7 @@ format-full-underline = ${colors.dark}
 
 [module/date]
 type = internal/date
-format = %{B#9dd274}  %{B-}%{B#e1e3e4} <date> %{B-}
+format = %{B#9dd274}  %{B-}%{B#c5c8c6} <date> %{B-}
 format-overline = ${colors.dark}
 format-underline = ${colors.dark}
 date = %R | %a, %d %b
