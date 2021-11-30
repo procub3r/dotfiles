@@ -24,6 +24,7 @@ cmd 'colorscheme sonokai'
 -- vim options --
 opt.number = true
 opt.mouse = 'a'
+opt.guicursor = 'i:block'
 opt.title = true
 opt.tabstop = 4
 opt.shiftwidth = 4
