@@ -1,6 +1,6 @@
 -- git clone --depth=1 https://github.com/savq/paq-nvim.git "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/pack/paqs/start/paq-nvim
 
-require 'paq-nvim' {
+require 'paq' {
     'savq/paq-nvim';
 
     -- lang:
@@ -16,4 +16,5 @@ require 'paq-nvim' {
     -- misc:
     'windwp/nvim-autopairs';
     'kyazdani42/nvim-tree.lua';
+    'cloudhead/neovim-fuzzy';
 }

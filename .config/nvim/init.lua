@@ -5,7 +5,6 @@ require 'nvimtree'
 require 'nvimcompe'
 require 'treesitter'
 require('nvim-autopairs').setup()
--- require 'lspconfig_nvim'
 
 -- convenient vars --
 local cmd = vim.cmd
@@ -20,6 +19,11 @@ g.sonokai_better_performance = 1
 g.sonokai_transparent_background = 1
 g.sonokai_style = 'andromeda'
 cmd 'colorscheme sonokai'
+-- neovim-fuzzy --
+-- Get rid of 'hg' not an executable error
+g.fuzzy_rootcmds = {
+	"git", "rev-parse", "--show-toplevel"
+}
 
 -- vim options --
 opt.number = true
@@ -31,9 +35,9 @@ opt.shiftwidth = 4
 opt.softtabstop = 4
 opt.expandtab = true
 opt.cursorline = false
--- opt.fcs = 'eob: '  -- Get rid of `~`
 opt.clipboard = 'unnamedplus'
 opt.splitbelow = true
 opt.splitright = true
-opt.autochdir = true
 opt.laststatus = 0 -- No statusline
+-- opt.fcs = 'eob: '  -- Get rid of `~`
+-- opt.autochdir = true
