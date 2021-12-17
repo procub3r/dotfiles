@@ -37,3 +37,4 @@ map('n', [[<leader>F]], [[:NvimTreeRefresh<cr>]], {noremap = true})
 
 -- fuzzy find --
 map('n', [[<leader>n]], [[:FuzzyOpen<cr>]], {noremap = true})
+map('n', [[<leader>g]], [[:FuzzyGrep<cr>]], {noremap = true})
