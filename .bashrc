@@ -11,6 +11,7 @@ alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias r='ranger'
+alias cdf='cd `find . -type d | fzy`'
 alias ..='cd ..'
 
 # PS1='[\u@\h \W]\$ '
