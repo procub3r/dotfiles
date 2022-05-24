@@ -5,9 +5,14 @@ require 'paq' {
 
     -- lang:
     'nvim-treesitter/nvim-treesitter';
-    'hrsh7th/nvim-compe';
     'neovim/nvim-lspconfig';
     'williamboman/nvim-lsp-installer';
+    -- cmp
+    'hrsh7th/nvim-cmp';
+    'hrsh7th/cmp-nvim-lsp';
+    'hrsh7th/cmp-path';
+    'hrsh7th/cmp-vsnip';
+    'hrsh7th/vim-vsnip';
 
     -- aesthetics:
     'sainnhe/sonokai';
