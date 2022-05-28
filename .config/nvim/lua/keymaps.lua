@@ -13,6 +13,7 @@ map('n', [[Q]], [[@q]], {noremap = true})
 map('n', [[<leader>i]], [[:w<cr>]], {noremap = true})
 map('n', [[<leader>q]], [[:q<cr>]], {noremap = true})
 map('n', [[<leader>s]], [[:!]], {noremap = true})
+map('n', [[<leader>b]], [[<C-^>]], {noremap = true})
 
 -- tabs --
 map('n', [[<leader>tn]], [[:tabnew<cr>]], {noremap = true})
@@ -23,13 +24,6 @@ map('n', [[<leader>tc]], [[:tabclose<cr>]], {noremap = true})
 
 -- terminal --
 map('t', [[<Esc>]], [[<C-\><C-N>]], {noremap = true})
-
--- compe --
--- map('i', [[<C-Space>]], [[compe#complete()]], {noremap = true, silent = true, expr = true})
--- map('i', [[<cr>]], [[compe#confirm('<CR>')]], {noremap = true, silent = true, expr = true})
--- map('i', [[<C-e>]], [[compe#close('<C-e>')]], {noremap = true, silent = true, expr = true})
--- map('i', [[<C-f>]], [[compe#scroll({ 'delta': +4 })]], {noremap = true, silent = true, expr = true})
--- map('i', [[<C-d>]], [[compe#scroll({ 'delta': -4 })]], {noremap = true, silent = true, expr = true})
 
 -- nvimtree --
 map('n', [[<leader>f]], [[:NvimTreeToggle<cr>]], {noremap = true})
