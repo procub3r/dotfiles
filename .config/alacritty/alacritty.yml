@@ -1,10 +1,11 @@
 window:
   padding:
-    x: 10
-    y: 10
+    x: 15
+    y: 15
 
 font:
   normal:
+<<<<<<< Updated upstream
     family: mononoki Nerd Font
     style: Regular
   bold:
@@ -17,10 +18,26 @@ font:
     family: mononoki Nerd Font
     style: Bold Italic
   size: 12
+=======
+    family: mononoki Nerd Font Mono
+    style: Regular
+  bold:
+    family: mononoki Nerd Font Mono
+    style: Bold
+  italic:
+    family: mononoki Nerd Font Mono
+    style: Italic
+  bold_italic:
+    family: mononoki Nerd Font Mono
+    style: BoldItalic
+
+  size: 13
+>>>>>>> Stashed changes
 
 # sonokai andromeda
 colors:
   primary:
+    # background: '#2f343f'
     background: '#2b2d3a'
     foreground: '#e1e3e4'
 

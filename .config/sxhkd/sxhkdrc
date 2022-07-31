@@ -20,10 +20,22 @@ super + Return
 super + shift + Return
 	firefox
 
+<<<<<<< Updated upstream
+=======
+# screenshot
+super + shift + s
+    flameshot gui
+
+# program launcher
+super + r
+    dmenu_run -i -p "Run:" -fn "mononoki Nerd Font Mono" -nb "#21232b" -nf "#fff" -sb "#9ed06c" -sf "#181a1c"
+
+>>>>>>> Stashed changes
 # file manager
 super + F1
     pcmanfm
 
+<<<<<<< Updated upstream
 # screen capture
 super + shift + s
     flameshot gui
@@ -33,6 +45,13 @@ super + r
 	dmenu_run -p "Run:" -nb "#000" -sb "#9ed06c" -sf "#000"
 
 # make sxhkd reload its configuration files
+=======
+# color picker
+super + F2
+    xcolor | xclip -r
+
+# make sxhkd reload its configuration files:
+>>>>>>> Stashed changes
 super + Escape
 	pkill -USR1 -x sxhkd
 

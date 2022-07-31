@@ -1,6 +1,6 @@
-dunst &
-lxsession --noautostart &
-flameshot &
+redshift -O 5000
+nitrogen --restore
+~/.config/lemonbar/run.sh &
+xsetroot -cursor_name arrow
 xsettingsd &
-xsetroot -cursor_name left_ptr
 exec bspwm
