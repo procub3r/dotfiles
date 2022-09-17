@@ -1,49 +1,34 @@
 require 'paqs'
+require 'lsp'
 require 'keymaps'
-require 'nvimlsp'
-require 'nvimcmp'
-require 'nvimtree'
+require 'autopairs'
 require 'treesitter'
-require('nvim-autopairs').setup()
 
--- convenient vars --
-local cmd = vim.cmd
-local opt = vim.opt
-local g = vim.g
+-- neovim-fuzzy
+vim.g.fuzzy_rootcmds = {'git', 'rev-parse', '--show-toplevel'}
 
--- colors --
-cmd 'syntax on'
-cmd 'set termguicolors'
+-- aesthetics
+vim.opt.termguicolors = true
+vim.g.sonokai_better_performance = true
+vim.g.sonokai_transparent_background = false
+vim.g.sonokai_style = 'andromeda'
+vim.g.sonokai_show_eob = true
+vim.g.sonokai_disable_terminal_colors = true
+vim.cmd [[colorscheme sonokai]]
 
-g.sonokai_better_performance = 1
-g.sonokai_transparent_background = 1
-g.sonokai_style = 'andromeda'
-cmd 'colorscheme sonokai'
+-- vim options
+vim.opt.title = true
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.mouse = 'a'
+vim.opt.clipboard = 'unnamedplus'
+vim.opt.guicursor = 'i:block'
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = 'number'
+vim.opt.splitbelow = true
+vim.opt.splitright = true
 
--- neovim-fuzzy --
--- Get rid of 'hg' not an executable error
-g.fuzzy_rootcmds = {
-	"git", "rev-parse", "--show-toplevel"
-}
-
--- vim options --
-opt.number = true
-opt.mouse = 'a'
-opt.guicursor = 'i:block'
-opt.title = true
-
-opt.tabstop = 4
-opt.shiftwidth = 4
-opt.softtabstop = 4
-opt.expandtab = true
-
-opt.cursorline = true
-opt.cursorlineopt = 'number'
-opt.clipboard = 'unnamedplus'
-
-opt.splitbelow = true
-opt.splitright = true
-
-opt.laststatus = 0 -- No statusline
--- opt.fcs = 'eob: '  -- Get rid of `~`
--- opt.autochdir = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+vim.opt.expandtab = true
