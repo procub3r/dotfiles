@@ -5,34 +5,19 @@ window:
 
 font:
   normal:
-<<<<<<< Updated upstream
-    family: mononoki Nerd Font
+    family: Cascadia Mono
     style: Regular
   bold:
-    family: mononoki Nerd Font
+    family: Cascadia Mono
     style: Bold
   italic:
-    family: mononoki Nerd Font
+    family: Cascadia Mono
     style: Italic
   bold_italic:
-    family: mononoki Nerd Font
-    style: Bold Italic
-  size: 12
-=======
-    family: mononoki Nerd Font Mono
-    style: Regular
-  bold:
-    family: mononoki Nerd Font Mono
-    style: Bold
-  italic:
-    family: mononoki Nerd Font Mono
-    style: Italic
-  bold_italic:
-    family: mononoki Nerd Font Mono
+    family: Cascadia Mono
     style: BoldItalic
 
-  size: 13
->>>>>>> Stashed changes
+  size: 12
 
 # sonokai andromeda
 colors:
@@ -60,34 +45,6 @@ colors:
     magenta: '#bb97ee'
     cyan: '#4dd0e1'
     white: '#e1e3e4'
-
-  opacity: 0.80
- 
-# # sonokai atlantis
-# colors:
-#   primary:
-#     background: "0x2a2f38"
-#     foreground: "0xe1e3e4"
-# 
-#   normal:
-#     black: "0x181a1c"
-#     red: "0xff6578"
-#     green: "0x9dd274"
-#     yellow: "0xeacb64"
-#     blue: "0x72cce8"
-#     magenta: "0xba9cf3"
-#     cyan: '#4dd0e1'
-#     white: "0xe1e3e4"
-# 
-#   bright:
-#     black: "0x828a9a"
-#     red: "0xff6578"
-#     green: "0x9dd274"
-#     yellow: "0xeacb64"
-#     blue: "0x72cce8"
-#     magenta: "0xba9cf3"
-#     cyan: '#4dd0e1'
-#     white: "0xe1e3e4"
 
 key_bindings:
   - { key: Return, mods: Control|Shift, action: SpawnNewInstance }

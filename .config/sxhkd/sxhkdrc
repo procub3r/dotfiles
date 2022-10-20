@@ -2,7 +2,7 @@
 # wm independent hotkeys
 #
 
-# volume:
+# Volume:
 XF86AudioRaiseVolume
     pactl set-sink-volume @DEFAULT_SINK@ +1000
 XF86AudioLowerVolume
@@ -20,38 +20,23 @@ super + Return
 super + shift + Return
 	firefox
 
-<<<<<<< Updated upstream
-=======
 # screenshot
 super + shift + s
     flameshot gui
 
 # program launcher
 super + r
-    dmenu_run -i -p "Run:" -fn "mononoki Nerd Font Mono" -nb "#21232b" -nf "#fff" -sb "#9ed06c" -sf "#181a1c"
+    dmenu_run -i -p "Run:" -fn "mononoki Nerd Font Mono" -nb "#21232b" -nf "#888888" -sb "#21232b" -sf "#ffffff"
 
->>>>>>> Stashed changes
 # file manager
 super + F1
     pcmanfm
 
-<<<<<<< Updated upstream
-# screen capture
-super + shift + s
-    flameshot gui
-
-# program launcher
-super + r
-	dmenu_run -p "Run:" -nb "#000" -sb "#9ed06c" -sf "#000"
-
-# make sxhkd reload its configuration files
-=======
 # color picker
 super + F2
     xcolor | xclip -r
 
 # make sxhkd reload its configuration files:
->>>>>>> Stashed changes
 super + Escape
 	pkill -USR1 -x sxhkd
 
@@ -122,8 +107,8 @@ super + {o,i}
 	bspc wm -h on
 
 # focus or send to the given desktop
-super + {_,shift + }{1-5}
-	bspc {desktop -f,node -d} '^{1-5}'
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
 
 #
 # preselect
