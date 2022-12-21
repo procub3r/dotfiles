@@ -45,10 +45,10 @@ wm_togglable_layout() {
     echo "%{A:bspc desktop -l next:}$1%{A}"
 }
 
-barbg="#21232b"
-barfg="#e1e3e4"
+barbg="#16161d"
+barfg="#dcd7ba"
 grey="#666666"
-red="#fb617e"
+red="#ff5d62"
 
 # read fifo > process and format > render with lemonbar
 tail --follow=name $fifo | while read -r line; do
@@ -86,7 +86,7 @@ tail --follow=name $fifo | while read -r line; do
         T*)
             title=${line:1}
             case $title in
-                "") title="[PROCUB3R'S SYSTEM]" ;;
+                "") title="[STUDY! ACE ISA2!]" ;;
             esac ;;
         # B*) battery=${line:1} ;;
         CLOSE) exit ;;
