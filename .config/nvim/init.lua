@@ -37,6 +37,10 @@ vim.keymap.set('t', [[<esc>]], [[<c-\><c-n>]], {noremap=true}) -- exit terminal 
 vim.keymap.set('n', [[<leader>f]], [[:FuzzyOpen<cr>]], {noremap=true})
 vim.keymap.set('n', [[<leader>g]], [[:FuzzyGrep<cr>]], {noremap=true})
 
+require('kanagawa').setup({
+    transparent = true,
+})
+
 vim.cmd [[colorscheme kanagawa]]
 
 -- vim.opt.termguicolors = true
@@ -63,3 +67,7 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
+
+-- highlight trailing whitespace
+vim.cmd [[highlight ExtraWhitespace ctermbg=grey guibg=grey]]
+vim.cmd [[match ExtraWhitespace /\s\+$/]]

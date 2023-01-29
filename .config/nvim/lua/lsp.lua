@@ -12,9 +12,31 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 end
 
+local cmp_default_capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+require ('lspconfig').texlab.setup {
+    on_attach = on_attach,
+    capabilities = cmp_default_capabilities
+}
+
+require ('lspconfig').ghcide.setup {
+    on_attach = on_attach,
+    capabilities = cmp_default_capabilities
+}
+
+require ('lspconfig').zls.setup {
+    on_attach = on_attach,
+    capabilities = cmp_default_capabilities
+}
+
 require('lspconfig').clangd.setup {
     on_attach = on_attach,
-    capabilities = require('cmp_nvim_lsp').default_capabilities()
+    capabilities = cmp_default_capabilities
+}
+
+require('lspconfig').pyright.setup {
+    on_attach = on_attach,
+    capabilities = cmp_default_capabilities
 }
 
 local has_words_before = function()
