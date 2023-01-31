@@ -1,39 +1,44 @@
 [global]
-    width = 250
+    width = (0, 300)
     origin = top-right
-    offset = 15x43
+    offset = 10x30
     progress_bar = false
     indicate_hidden = true
     transparency = 10  #
     separator_height = 2
     frame_width = 2
-    frame_color = "#c5c8c6"
-    font = "SF Mono" 10
+    frame_color = "#c8c093"
+    font = "Iosevka Term 12"
     line_height = 2
     format = "<b>%s</b>\n<i>%b</i>"
-    max_icon_size = 32
+    max_icon_size = 28
     text_icon_padding = 10
     icon_path = /usr/share/icons/Arc/status/32:/usr/share/icons/Arc/devices/32
 
 [urgency_low]
     timeout = 2
-    background = "#2b2d3a"
-    foreground = "#e1e3e4"
+    background = "#16161d"
+    foreground = "#dcd7ba"
 
 [urgency_normal]
     timeout = 5
-    background = "#2b2d3a"
-    foreground = "#e1e3e4"
+    # background = "#2b2d3a"
+    # foreground = "#e1e3e4"
+    background = "#16161d"
+    foreground = "#dcd7ba"
 
 [urgency_critical]
     timeout = 0
-    background = "#2b2d3a"
-    foreground = "#e1e3e4"
+    # background = "#2b2d3a"
+    # foreground = "#e1e3e4"
+    background = "#16161d"
+    foreground = "#dcd7ba"
 
-[shortcuts]
-    close = "ctrl+space"
-    close_all = ctrl+shift+space
-    history = ctrl+grave
-    context = ctrl+shift+period
+# # deprecated
+# [shortcuts]
+#     close = "ctrl+space"
+#     close_all = "ctrl+shift+space"
+#     history = "ctrl+grave"
+#     context = "ctrl+shift+period"
 
 # vim: ft=cfg
