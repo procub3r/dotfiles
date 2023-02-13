@@ -2,43 +2,14 @@
     width = (0, 300)
     origin = top-right
     offset = 10x30
-    progress_bar = false
-    indicate_hidden = true
-    transparency = 10  #
-    separator_height = 2
+    separator_height = 0
+    text_icon_padding = 12
     frame_width = 2
     frame_color = "#c8c093"
-    font = "Iosevka Term 12"
-    line_height = 2
-    format = "<b>%s</b>\n<i>%b</i>"
-    max_icon_size = 28
-    text_icon_padding = 10
-    icon_path = /usr/share/icons/Arc/status/32:/usr/share/icons/Arc/devices/32
-
-[urgency_low]
-    timeout = 2
-    background = "#16161d"
-    foreground = "#dcd7ba"
-
-[urgency_normal]
-    timeout = 5
-    # background = "#2b2d3a"
-    # foreground = "#e1e3e4"
-    background = "#16161d"
-    foreground = "#dcd7ba"
-
-[urgency_critical]
-    timeout = 0
-    # background = "#2b2d3a"
-    # foreground = "#e1e3e4"
-    background = "#16161d"
-    foreground = "#dcd7ba"
-
-# # deprecated
-# [shortcuts]
-#     close = "ctrl+space"
-#     close_all = "ctrl+shift+space"
-#     history = "ctrl+grave"
-#     context = "ctrl+shift+period"
+    background = "#1f1f28"
+    font = "Iosevka Term 10"
+    icon_theme = "Kanagawa, Adwaita, hicolor"
+    enable_recursive_icon_lookup = true
+    history = "mod4+n"
 
 # vim: ft=cfg

@@ -2,7 +2,26 @@
 # wm independent hotkeys
 #
 
-# Volume:
+# terminal emulator
+super + Return
+	alacritty
+
+super + shift + Return
+	firefox
+
+# program launcher
+super + r
+    dmenu_run -i -p "Run:" -fn "Iosevka Term" -nb "#16161d" -nf "#dcd7ba" -sb "#c8c093" -sf "#16161d"
+
+super + shift + s
+    flameshot gui
+
+super + F1
+    thunar
+
+super + F2
+    xcolor | xclip -r
+
 XF86AudioRaiseVolume
     pactl set-sink-volume @DEFAULT_SINK@ +1000
 XF86AudioLowerVolume
@@ -11,30 +30,6 @@ XF86AudioMute
     pactl set-sink-mute @DEFAULT_SINK@ toggle
 shift + XF86AudioMute
     pactl set-source-mute @DEFAULT_SOURCE@ toggle
-
-# terminal emulator
-super + Return
-	alacritty
-
-# web browser
-super + shift + Return
-	firefox
-
-# screenshot
-super + shift + s
-    flameshot gui
-
-# program launcher
-super + r
-    dmenu_run -i -p "Run:" -fn "mononoki Nerd Font Mono" -nb "#21232b" -nf "#888888" -sb "#21232b" -sf "#ffffff"
-
-# file manager
-super + F1
-    pcmanfm
-
-# color picker
-super + F2
-    xcolor | xclip -r
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -70,7 +65,7 @@ super + g
 
 # set the window state
 super + {t,shift + t,s,f}
-	bspc node -t ~{tiled,pseudo_tiled,floating,fullscreen}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
 super + ctrl + {m,x,y,z}
@@ -107,8 +102,8 @@ super + {o,i}
 	bspc wm -h on
 
 # focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+super + {_,shift + }{1-5}
+	bspc {desktop -f,node -d} '^{1-5}'
 
 #
 # preselect
