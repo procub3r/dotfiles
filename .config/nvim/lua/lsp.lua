@@ -1,3 +1,7 @@
+local lspconfig = require('lspconfig')
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local cmp = require('cmp')
+
 local on_attach = function(client, bufnr)
     local bufopts = {noremap=true, silent=true, buffer=bufnr}
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
@@ -10,58 +14,38 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
     vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+    vim.keymap.set('n', '<space>p', vim.lsp.buf.format, bufopts)
+    vim.keymap.set('n', 'gl', vim.diagnostic.open_float, bufopts)
 end
 
-local cmp_default_capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-require ('lspconfig').texlab.setup {
-    on_attach = on_attach,
-    capabilities = cmp_default_capabilities
-}
-
-require ('lspconfig').ghcide.setup {
-    on_attach = on_attach,
-    capabilities = cmp_default_capabilities
-}
-
-require ('lspconfig').zls.setup {
-    on_attach = on_attach,
-    capabilities = cmp_default_capabilities
-}
-
-require('lspconfig').clangd.setup {
-    on_attach = on_attach,
-    capabilities = cmp_default_capabilities
-}
-
-require('lspconfig').pyright.setup {
-    on_attach = on_attach,
-    capabilities = cmp_default_capabilities
-}
+local servers = { 'clangd', 'zls', 'rust_analyzer', 'html' }
+for _, server in ipairs(servers) do
+    lspconfig[server].setup {
+        on_attach = on_attach,
+        capabilities = capabilities,
+    }
+end
 
 local has_words_before = function()
+    unpack = unpack or table.unpack
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
 end
 
 local feedkey = function(key, mode)
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
 
-local cmp = require 'cmp'
 cmp.setup({
     snippet = {
         expand = function(args)
             vim.fn['vsnip#anonymous'](args.body)
         end,
     },
-    sources = cmp.config.sources({
-        {name = 'nvim_lsp'},
-        {name = 'vsnip'}
-    }, {
-        {name = 'buffer'},
-    }),
-    mapping = {
+    mapping = cmp.mapping.preset.insert({
+        ['<c-space>'] = cmp.mapping.complete(),
+        ['<c-e>'] = cmp.mapping.abort(),
+        ['<cr>'] = cmp.mapping.confirm({select = true}),
         ['<Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
@@ -72,16 +56,35 @@ cmp.setup({
             else
                 fallback()
             end
-        end, {'i', 's'}),
-        ['<S-Tab>'] = cmp.mapping(function(fallback)
+        end, { 'i', 's' }),
+        ['<S-Tab>'] = cmp.mapping(function()
             if cmp.visible() then
                 cmp.select_prev_item()
-            elseif vim.fn['nsnip#jumpable'](-1) == 1 then
+            elseif vim.fn['vsnip#jumpable'](-1) == 1 then
                 feedkey('<Plug>(vsnip-jump-prev)', '')
             end
-        end, {'i', 's'}),
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm({select=true}),
-    },
+        end, { 'i', 's' }),
+    }),
+    sources = cmp.config.sources({
+        { name = 'nvim_lsp' },
+        { name = 'buffer' },
+        { name = 'vsnip' },
+        { name = 'path' },
+    }),
 })
+
+-- cmp.setup.cmdline({ '/', '?' }, {
+--     mapping = cmp.mapping.preset.cmdline(),
+--     sources = {
+--         { name = 'buffer' },
+--     }
+-- })
+-- 
+-- cmp.setup.cmdline(':', {
+--     mapping = cmp.mapping.preset.cmdline(),
+--     sources = cmp.config.sources({
+--         { name = 'path' },
+--     }, {
+--         { name = 'cmdline' },
+--     })
+-- })
