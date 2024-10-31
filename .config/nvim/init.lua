@@ -1,5 +1,6 @@
 -- map keybinds first so i still get to use them if something in the config errors out
 vim.g.mapleader = ' '
+-- vim.keymap.set('i', [[jk]], [[<esc>]], {noremap=true})
 vim.keymap.set('n', [[<leader>w]], [[:w<cr>]], {noremap=true})
 vim.keymap.set('n', [[<leader>q]], [[:q<cr>]], {noremap=true})
 vim.keymap.set('n', [[<leader>h]], [[<c-w>h]], {noremap=true})
@@ -16,10 +17,10 @@ vim.keymap.set('t', [[<esc>]], [[<c-\><c-n>]], {noremap=true}) -- exit terminal 
 require('paq') {
     'savq/paq-nvim';
     'rebelot/kanagawa.nvim';
+    'sainnhe/gruvbox-material';
     'windwp/nvim-autopairs';
     'cloudhead/neovim-fuzzy';
-    'nvim-treesitter/nvim-treesitter';
-
+    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
     'neovim/nvim-lspconfig';
     'hrsh7th/cmp-nvim-lsp';
     'hrsh7th/cmp-buffer';
@@ -30,20 +31,34 @@ require('paq') {
     'hrsh7th/vim-vsnip';
 }
 
-require('kanagawa').setup({
-    transparent = true,
-    colors = {theme={all={ui={bg_gutter="none"}}}}
-})
-vim.cmd [[colorscheme kanagawa]]
+-- require('kanagawa').setup({
+--     transparent = true,
+--     colors = {theme={all={ui={bg_gutter="none"}}}}
+-- })
+-- vim.cmd [[colorscheme kanagawa]]
+
+vim.cmd [[set termguicolors]]
+vim.g.gruvbox_material_better_performance = true
+vim.g.gruvbox_material_enable_italic = true
+vim.g.gruvbox_material_enable_bold = true
+vim.g.gruvbox_material_background = 'hard'
+vim.g.gruvbox_material_foreground = 'material'
+vim.g.gruvbox_material_dim_inactive_windows = 0
+vim.g.gruvbox_material_menu_selection_background = 'green'
+vim.g.gruvbox_material_ui_contrast = 'high'
+vim.g.gruvbox_material_transparent_background = 2
+vim.cmd [[colorscheme gruvbox-material]]
 
 require('nvim-autopairs').setup()
+require('blame').setup({})
 require('nvim-treesitter.configs').setup {
     highlight = {enable = true}
 }
 
--- highlight trailing whitespace
-vim.cmd [[highlight ExtraWhitespace ctermbg=grey guibg=grey]]
+vim.cmd [[highlight ExtraWhitespace ctermbg=grey guibg=grey]] -- highlight trailing whitespace
+vim.cmd [[hi StatusLine ctermbg=Cyan ctermfg=Red]]
 vim.cmd [[match ExtraWhitespace /\s\+$/]]
+-- vim.cmd [[set cmdheight=0]]
 
 vim.opt.title = true
 vim.opt.number = true
@@ -56,6 +71,7 @@ vim.opt.cursorlineopt = 'number'
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.undofile = true
+vim.opt.laststatus = 2
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
