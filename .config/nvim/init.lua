@@ -20,7 +20,9 @@ require('paq') {
     'sainnhe/gruvbox-material';
     'windwp/nvim-autopairs';
     'cloudhead/neovim-fuzzy';
+    'FabijanZulj/blame.nvim';
     { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+
     'neovim/nvim-lspconfig';
     'hrsh7th/cmp-nvim-lsp';
     'hrsh7th/cmp-buffer';

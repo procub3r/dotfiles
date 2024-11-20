@@ -1,32 +1,21 @@
-#!/bin/sh
+#! /bin/sh
 
-trap - INT TERM QUIT EXIT
-
-# autostart
 pgrep -x sxhkd > /dev/null || sxhkd &
-setsid setsid ~/.config/lemonbar/bar.sh &
+pgrep bar.sh > /dev/null || ~/.config/bar/bar.sh &
 
 bspc monitor -d 1 2 3 4 5
 
 bspc config border_width 2
 bspc config window_gap 0
-bspc config normal_border_color '#16161d'
-bspc config focused_border_color '#c8c093'
 
 bspc config split_ratio 0.5
-bspc config single_monocle true
 bspc config borderless_monocle true
 bspc config gapless_monocle true
-bspc config honor_size_hints true
+bspc config single_monocle true
 
-bspc rule -a Pavucontrol state=floating
-bspc rule -a Matplotlib state=floating
-bspc rule -a Pcmanfm state=floating
-bspc rule -a pixengine state=floating
-bspc rule -a Qemu-system-x86_64 state=floating
+bspc desktop -f 1
 
-bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Gpick state=floating
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+bspc rule -a pavucontrol desktop=^4 follow=off
+bspc rule -a Qemu-system-x86_64 state=floating
+bspc rule -a discord desktop=^5 follow=off

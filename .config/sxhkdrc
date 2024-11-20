@@ -2,26 +2,34 @@
 # wm independent hotkeys
 #
 
+# program launcher
+super + r
+	dmenu_run
+
 # terminal emulator
 super + Return
 	alacritty
 
+# web browser
 super + shift + Return
 	firefox
 
-# program launcher
-super + r
-    dmenu_run -i -p "Run:" -fn "Iosevka Term" -nb "#16161d" -nf "#dcd7ba" -sb "#c8c093" -sf "#16161d"
-
-super + shift + s
-    flameshot gui
-
+# file browser
 super + F1
-    thunar
+    pcmanfm
 
+# color picker
 super + F2
-    xcolor | xclip -r
+    xcolor -s # -f rgb
 
+# screenshot
+super + shift + s
+	flameshot gui
+
+super + 0
+    BRIGHTNESS=$(xbacklight); xbacklight -set 10; env XSECURELOCK_SAVER=saver_xscreensaver xsecurelock; xbacklight -set $BRIGHTNESS
+
+# volume
 XF86AudioRaiseVolume
     pactl set-sink-volume @DEFAULT_SINK@ +1000
 XF86AudioLowerVolume
@@ -96,8 +104,8 @@ super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
-super + {Tab,grave}
-	bspc {node,desktop} -f last
+super + {grave,Tab}
+	bspc {desktop,node} -f last
 
 # focus the older or newer node in the focus history
 super + {o,i}
