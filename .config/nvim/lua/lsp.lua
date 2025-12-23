@@ -21,12 +21,11 @@ blink.setup({
 })
 
 
-local lspconfig = require('lspconfig')
 -- list of servers
-local servers = { 'clangd', 'zls', 'gopls' }
+local servers = { 'clangd', 'zls' }
 -- setup all servers
 for _, server in ipairs(servers) do
-    lspconfig[server].setup({
+    vim.lsp.config(server, {
         on_attach = function(client, bufnr)
             -- lsp keybindings
             local bufopts = { noremap=true, silent=true, buffer=bufnr }

@@ -33,9 +33,10 @@ vim.g.gruvbox_material_transparent_background = 2
 vim.cmd [[colorscheme gruvbox-material]]
 
 -- treesitter
-require('nvim-treesitter.configs').setup {
-    highlight = {enable = true}
-}
+require('nvim-treesitter').setup {}
+-- require('nvim-treesitter.configs').setup {
+--     highlight = {enable = true}
+-- }
 
 -- auto-pairs
 -- TODO: figure out how to make jiangmiao/auto-pairs work pls :sob:
